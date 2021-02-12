@@ -144,6 +144,8 @@ GEM
     devise-i18n (1.9.2)
       devise (>= 4.7.1)
     diff-lcs (1.4.4)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
@@ -175,6 +177,9 @@ GEM
       ruby2_keywords
     faraday-net_http (1.0.1)
     ffi (1.14.2)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
     formatador (0.2.5)
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
@@ -198,11 +203,23 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    harvesting (0.5.1)
+      http (>= 3.3, < 5.0)
     has_scope (0.7.2)
       actionpack (>= 4.1)
       activesupport (>= 4.1)
     heroku-stage (0.4.0)
       rails
+    http (4.4.1)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.2)
+      http-parser (~> 1.2.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    http-form_data (2.3.0)
+    http-parser (1.2.3)
+      ffi-compiler (>= 1.0, < 2.0)
     i18n (1.8.8)
       concurrent-ruby (~> 1.0)
     inherited_resources (1.12.0)
@@ -488,6 +505,9 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2021.1)
       tzinfo (>= 1.0.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.7)
     unicode-display_width (1.7.0)
     versionist (1.7.0)
       activesupport (>= 3)
@@ -529,6 +549,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   guard-rspec
+  harvesting
   heroku-stage
   jbuilder (~> 2.7)
   listen
