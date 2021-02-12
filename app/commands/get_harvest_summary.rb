@@ -3,7 +3,7 @@ class GetHarvestSummary < PowerTypes::Command.new(:client_id, :project_id)
 
   def perform
     {
-      client: client,
+      title: title,
       hours_by_month: hours_by_month
     }
   end
@@ -17,10 +17,14 @@ class GetHarvestSummary < PowerTypes::Command.new(:client_id, :project_id)
                                                   to: Time.zone.today)
   end
 
-  def client
+  def title
     return '' if entries.empty?
 
-    entries[0].attributes['client']['name']
+    if @project_id
+      entries[0].attributes['project']['name']
+    else
+      entries[0].attributes['client']['name']
+    end
   end
 
   def hours_by_month
