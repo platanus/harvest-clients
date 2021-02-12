@@ -1,5 +1,5 @@
 class GetHarvestSummary < PowerTypes::Command.new(:client_id, :project_id)
-  NUMBER_OF_MONTHS = 2
+  NUMBER_OF_MONTHS = ENV.fetch('NUMBER_OF_MONTHS').to_i
 
   def perform
     {
