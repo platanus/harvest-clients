@@ -1,17 +1,10 @@
 <template>
-  <div id="app">
-    <p>{{ message }}</p>
-  </div>
+  <div id="app" />
 </template>
 
 <script>
 export default {
-  data: function () {
-    return {
-      message: "Hello Vue!"
-    }
-  }
-}
+};
 </script>
 
 <style scoped>
